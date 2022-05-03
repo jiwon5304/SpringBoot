@@ -5,8 +5,7 @@ import lombok.*;
 @Entity
 @Table(name = "libraries")
 public class Libraries {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -17,10 +16,8 @@ public class Libraries {
     @JoinColumn(name = "book", insertable = false, updatable = false)
     private Books books;
 
-    // to do : boolean type 필드추가하기
-//    @Convert(converter = BooleanToYNConverter.class)
-//    private boolean isActive;
 }
+
 
 
 

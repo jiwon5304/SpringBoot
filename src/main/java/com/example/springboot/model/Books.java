@@ -1,11 +1,12 @@
 package com.example.springboot.model;
 import javax.persistence.*;
 
+
+
 @Entity
 @Table(name = "books")
 public class Books {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "book_title",nullable = false, length = 100)
