@@ -9,11 +9,11 @@ public class Libraries {
     @Column(name = "libraries_id")
     private int id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private Users users;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id", insertable = false, updatable = false)
     private Books books;
 

@@ -13,6 +13,6 @@ public class Lockers {
     @Column(name = "locker_name",nullable = false, length = 100)
     private String name;
 
-    @OneToOne(mappedBy = "locker")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "locker")
     private Users users;
 }

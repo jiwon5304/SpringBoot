@@ -19,12 +19,12 @@ public class Users {
     private String password;
 
     // Users:Groups = N:1
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")          // Groups의 id와 연결
     private Groups group;                   // Groups의 mappedBy와 연결
 
     // Users:Lockers = 1:1
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "locker_id")
     private Lockers locker;
 
