@@ -1,5 +1,7 @@
 package com.example.springboot.model;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -7,6 +9,7 @@ import javax.persistence.*;
 public class Users {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private int id;
 
     @Column(name = "user_name",nullable = false, length = 100)
@@ -24,5 +27,9 @@ public class Users {
     @OneToOne
     @JoinColumn(name = "locker_id")
     private Lockers locker;
+
+    // Users:Books = N : N
+    @OneToMany(mappedBy = "users")
+    private List<Libraries> library = new ArrayList<>();
 
 }

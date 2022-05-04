@@ -6,14 +6,15 @@ import lombok.*;
 @Table(name = "libraries")
 public class Libraries {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "libraries_id")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user", insertable = false, updatable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private Users users;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book", insertable = false, updatable = false)
+    @ManyToOne
+    @JoinColumn(name = "book_id", insertable = false, updatable = false)
     private Books books;
 
 }
