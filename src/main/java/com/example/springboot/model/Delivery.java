@@ -1,7 +1,6 @@
 package com.example.springboot.model;
 
 import lombok.*;
-
 import javax.persistence.Entity;
 import javax.persistence.*;
 
