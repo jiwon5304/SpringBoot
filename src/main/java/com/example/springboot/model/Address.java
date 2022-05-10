@@ -15,9 +15,9 @@ public class Address {
     private String zipcode;
 
     // 기본 생성자를 만들어줌.
-    // public은 사람들이 호출할 수 있으므로, protected 사용
+    // 생성자에서 값을 모두 초기화해서 변경 불가능한 클래스 만들기
+    // public 은 사람들이 호출할 수 있으므로, protected 사용
     protected Address() {
-
     }
 
     public Address(String city, String street, String zipcode) {
