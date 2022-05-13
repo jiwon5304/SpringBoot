@@ -2,6 +2,7 @@ package com.example.springboot.service;
 
 import com.example.springboot.repository.MemberRepository;
 import com.example.springboot.model.Member;
+import org.aspectj.apache.bcel.generic.LOOKUPSWITCH;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -41,5 +42,11 @@ public class MemberService {
     // 회원 단건 조회
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
+    }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
     }
 }
