@@ -3,6 +3,8 @@ package com.example.springboot.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+
 import lombok.*;
 
 
@@ -10,7 +12,7 @@ import lombok.*;
 @Getter @Setter
 public class Member {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue()
     @Column(name = "member_id")
     private Long id;
 
